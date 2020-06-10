@@ -53,7 +53,7 @@ namespace ExampleGame
         { 
             // TODO: use this.Content to load your game content here
             var anteater = Content.Load<Texture2D>("anteater");
-            var leaftexture = Content.Load<Texture2D>("leaf");
+            var leaftexture = Content.Load<Texture2D>("cloverleaf");
             var homeTexture = Content.Load<Texture2D>("home");
             var antTexture = Content.Load<Texture2D>("ant80");
 

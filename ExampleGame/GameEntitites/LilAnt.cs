@@ -217,8 +217,8 @@ namespace TheTirelessLilAnt.GameEntitites
         {
             _leaf.Rotation = Rotation;
 
-            var newX = Position.X + Width - _leaf.Width / 2 - 10;
-            var newY = Position.Y - Height /2 - _leaf.Height / 2 + 25;
+            var newX = Position.X + Width/2 + _leaf.Width/2 - 25;
+            var newY = Position.Y - Height /2 - _leaf.Height / 2 + 60;
             _leaf.Position = new Vector2(newX, newY);
         }
         

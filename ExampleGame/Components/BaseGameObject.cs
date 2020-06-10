@@ -9,12 +9,11 @@ namespace TheTirelessLilAnt.Components
     {
         public Vector2 Position { get; set; }
         public Vector2 Velocity { get; set; }
-        public Vector2 Scale { get; set; }
         public Vector2 Direction { get; set;}
         protected Texture2D Texture { get; set; }
 
-        public int Height => Texture is null ? 0:(int)( Texture.Height * Scale.X);
-        public int Width => Texture is null ? 0 :(int)( Texture.Width * Scale.Y);
+        public int Height => Texture is null ? 0:Texture.Height;
+        public int Width => Texture is null ? 0 :Texture.Width;
         public bool Visible { get; set; }
         public Vector2 Origin { get; set; }
         public float Rotation { get; set; }
@@ -28,7 +27,6 @@ namespace TheTirelessLilAnt.Components
             Direction = Vector2.Zero;
             Position = Vector2.Zero;
             Velocity = Vector2.Zero;
-            Scale = Vector2.One;
             Visible = true;
             Origin = Vector2.Zero;
         }
