@@ -44,6 +44,18 @@
 /processorParam:TextureFormat=Compressed
 /build:fontdesc.spritefont
 
+#begin ground.gif
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:ground.gif
+
 #begin home.png
 /importer:TextureImporter
 /processor:TextureProcessor

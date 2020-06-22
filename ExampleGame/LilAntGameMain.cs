@@ -15,9 +15,12 @@ namespace ExampleGame
        private SpriteBatch _spriteBatch;
        private IGameManager _gameManager;
 
-       private readonly Home _antHome;
-       private readonly Leaf _antLeaf;
-       private readonly LilAnt _lilAnt;
+       private Rectangle _mainFrame;
+       private Texture2D _backgroundGrassTexture; 
+
+       private  Home _antHome;
+       private  Leaf _leaf;
+       private  LilAnt _lilAnt;
 
         public LilAntGameMain()
         {          
@@ -43,6 +46,7 @@ namespace ExampleGame
             _graphics.PreferredBackBufferHeight = 720;
             _graphics.PreferredBackBufferWidth = 1024;
             _graphics.ApplyChanges();
+            _mainFrame =  new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
         }
 
         /// <summary>
@@ -56,18 +60,20 @@ namespace ExampleGame
             var leaftexture = Content.Load<Texture2D>("leaf");
             var homeTexture = Content.Load<Texture2D>("home");
             var antTexture = Content.Load<Texture2D>("ant80");
+            _backgroundGrassTexture = Content.Load<Texture2D>("ground");
 
-            var leaf = new Leaf(leaftexture, 1024, 720);
-            var home = new Home(homeTexture, 1024, 720);
-            var lilAnt = new LilAnt(antTexture, new Vector2(100, 100))
-                             .AddHome(home)
-                             .AddLeaf(leaf);
+            _leaf = new Leaf(leaftexture, 1024, 720);
+            _antHome = new Home(homeTexture, 1024, 720);
+            _lilAnt = new LilAnt(antTexture, new Vector2(100, 100))
+                             .AddHome(_antHome)
+                             .AddLeaf(_leaf);
 
-            _gameManager.AddObject(lilAnt);
-            _gameManager.AddObject(leaf);
-            _gameManager.AddObject(home);
+            _gameManager.AddObject(_lilAnt);
+            _gameManager.AddObject(_leaf);
+            _gameManager.AddObject(_antHome);
 
             Mouse.SetCursor(MouseCursor.FromTexture2D(anteater, 40, 40));
+
             // Create a new SpriteBatch, which can be used to draw textures.
             _spriteBatch = new SpriteBatch(GraphicsDevice);  
             _gameManager.LoadObjects(Content);
@@ -107,7 +113,8 @@ namespace ExampleGame
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            _spriteBatch.Begin();
+            _spriteBatch.Begin();           
+            _spriteBatch.Draw(_backgroundGrassTexture, _mainFrame, Color.White);
             _gameManager.DrawObjects(_spriteBatch);
             _spriteBatch.End();
             // TODO: Add your drawing code here

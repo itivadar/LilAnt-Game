@@ -10,7 +10,6 @@ namespace TheTirelessLilAnt
         Vector2 Position { get; set; }
         Vector2 Velocity { get; set; }
         Vector2 Direction { get; set; }
-        Vector2 Scale { get; set;}
 
         float Rotation { get;}
         Vector2 Origin { get; set; }
