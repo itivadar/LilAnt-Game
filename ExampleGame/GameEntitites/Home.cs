@@ -4,21 +4,19 @@ using TheTirelessLilAnt.Components;
 
 namespace TheTirelessLilAnt.GameEntitites
 {
-    public class Home : BaseGameObject
+  public class Home : BaseGameObject
+  {
+    public Home(Texture2D texture, int maxWidth, int maxHeight) : base(texture)
     {
-        public int _maxWidth;
-        public int _maxHeight;
-        public Home(Texture2D texture, int maxWidth, int maxHeight) : base(texture) 
-        {
-            _maxHeight = maxHeight;
-            _maxWidth = maxWidth;            
-        }
-
-        public override void Update(GameTime gameTime)
-        {
-            var posX = _maxWidth - Width / 2;
-            var posY = _maxHeight - Height / 2;
-            Position = new Vector2(posX, posY);
-        }
+      //The Home object will have static position on the corner of the screen.
+      var posX = maxWidth - Width / 2;
+      var posY = maxHeight - Height / 2;
+      Position = new Vector2(posX, posY);
     }
+
+    //Saddly enough, the home have nothing to update :( 
+    public override void Update(GameTime gameTime)
+    {
+    }
+  }
 }

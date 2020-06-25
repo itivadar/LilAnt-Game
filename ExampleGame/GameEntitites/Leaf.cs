@@ -11,7 +11,6 @@ namespace TheTirelessLilAnt.GameEntitites
         private int _maxWidth;
         private int _maxHeight;
 
-
         public Leaf(Texture2D texture, int maxWidth, int maxHeight): base(texture)
         {
             _maxWidth = maxWidth;
@@ -20,6 +19,9 @@ namespace TheTirelessLilAnt.GameEntitites
             RandomizePosition();
         }
 
+        /// <summary>
+        /// Called everytime when the Leafs needs to be drawn.
+        /// </summary>
         public override void Draw(SpriteBatch spritebatch)
         {
             base.Draw(spritebatch);
@@ -31,6 +33,10 @@ namespace TheTirelessLilAnt.GameEntitites
            
         }
 
+        /// <summary>
+        /// Gets a random position for the leaf. 
+        /// The position will be randomize above the main diagonal of the screen.
+        /// </summary>
         public void RandomizePosition()
         {
             var newY = _rand.Next(Height /2 , _maxHeight - Height / 2);

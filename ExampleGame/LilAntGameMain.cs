@@ -40,7 +40,6 @@ namespace ExampleGame
         protected override void Initialize()
         {
             base.Initialize();
-            // TODO: Add your initialization logic here
             this.IsMouseVisible = true;
             Window.Title = "The Tireless Lil Ant";
             _graphics.PreferredBackBufferHeight = 720;
@@ -55,7 +54,6 @@ namespace ExampleGame
         /// </summary>
         protected override void LoadContent()
         { 
-            // TODO: use this.Content to load your game content here
             var anteater = Content.Load<Texture2D>("anteater");
             var leaftexture = Content.Load<Texture2D>("leaf");
             var homeTexture = Content.Load<Texture2D>("home");
@@ -85,7 +83,6 @@ namespace ExampleGame
         /// </summary>
         protected override void UnloadContent()
         {
-            // TODO: Unload any non ContentManager content here
             _gameManager.UnloadObjects();
         }
 
@@ -100,7 +97,6 @@ namespace ExampleGame
 
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-            // TODO: Add your update logic here
 
             base.Update(gameTime);
         }
@@ -117,7 +113,6 @@ namespace ExampleGame
             _spriteBatch.Draw(_backgroundGrassTexture, _mainFrame, Color.White);
             _gameManager.DrawObjects(_spriteBatch);
             _spriteBatch.End();
-            // TODO: Add your drawing code here
 
             base.Draw(gameTime);
         }

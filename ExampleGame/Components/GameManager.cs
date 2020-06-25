@@ -14,19 +14,29 @@ namespace TheTirelessLilAnt.Components
     {
         private List<IGameObject> _objects;
 
+        /// <summary>
+        /// Lists of all object in the game. 
+        /// </summary>
         public IEnumerable<IGameObject> GameObjects => _objects;
         
+
         public GameManager()
         {
             _objects = new List<IGameObject>();
         }
 
+        /// <summary>
+        /// Adds an new entity to the game objects collection. 
+        /// </summary>
+        /// <param name="gameObject"></param>
         public void AddObject(IGameObject gameObject)
         {
             if (gameObject is null) return;
             _objects.Add(gameObject);
         }
-
+        /// <summary>
+        /// Calls the Update() of every visible game object.
+        /// </summary>
         public void DrawObjects(SpriteBatch spritebatch)
         {
             var visibleObjects = GameObjects.Where(gameObject => gameObject.Visible);
@@ -48,6 +58,9 @@ namespace TheTirelessLilAnt.Components
             }
         }
 
+        /// <summary>
+        /// Unloads the content of the game objects.
+        /// </summary>
         public void UnloadObjects()
         {
             foreach (IGameObject gameObject in GameObjects)
@@ -56,6 +69,9 @@ namespace TheTirelessLilAnt.Components
             }
         }
 
+        /// <summary>
+        /// Loads resources of every game object.
+        /// </summary>
         public void LoadObjects(ContentManager contentManager)
         {
             foreach (IGameObject gameObject in GameObjects)

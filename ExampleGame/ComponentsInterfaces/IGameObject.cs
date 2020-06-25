@@ -5,8 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 namespace TheTirelessLilAnt
 {
     public interface IGameObject 
-    {
-         
+    {         
         Vector2 Position { get; set; }
         Vector2 Velocity { get; set; }
         Vector2 Direction { get; set; }
