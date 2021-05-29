@@ -41,7 +41,7 @@ namespace ExampleGame
         {
             base.Initialize();
             this.IsMouseVisible = true;
-            Window.Title = "The Tireless Lil Ant";
+            Window.Title = "Lil Ant";
             _graphics.PreferredBackBufferHeight = 720;
             _graphics.PreferredBackBufferWidth = 1024;
             _graphics.ApplyChanges();

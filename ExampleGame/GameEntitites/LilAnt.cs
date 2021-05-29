@@ -93,7 +93,7 @@ namespace TheTirelessLilAnt.GameEntitites
       KeepInScreen(spriteBatch);
       var stateString = _statesToFunnyString[_currentStateAction.Method.Name];
 
-      spriteBatch.DrawString(spriteFont, $"The Tireless Lil Ant is {stateString}.", Vector2.Zero, Color.White);
+      spriteBatch.DrawString(spriteFont, $"The Lil Ant is {stateString}.", Vector2.Zero, Color.White);
       spriteBatch.DrawString(spriteFont, $"Leafs gathered: {_leafGathered}", new Vector2(0, 25), Color.White);
       base.Draw(spriteBatch);
     }
@@ -326,10 +326,9 @@ namespace TheTirelessLilAnt.GameEntitites
            {
                {"GoHomeState", "going home"},
                {"WaitState","waiting"},
-               {"RunAwayState","running awaay. They saw her rolling" },
-               {"FindLeafState", "gathering leaf" },
+               {"RunAwayState","running awaay. You dont catch her" },
+               {"FindLeafState", "gathering leafs" },
            };
-
     }
     #endregion Private Methods
   }
