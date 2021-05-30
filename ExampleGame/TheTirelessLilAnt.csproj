@@ -9,8 +9,8 @@
     <ProjectGuid>{E5AEE796-E951-4841-85DB-5E34960AD5B8}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TheTirelessLilAnt</RootNamespace>
-    <AssemblyName>TheTirelessLilAnt</AssemblyName>
+    <RootNamespace>TheLilAnt</RootNamespace>
+    <AssemblyName>TheLilAnt</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MonoGamePlatform>DesktopGL</MonoGamePlatform>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
